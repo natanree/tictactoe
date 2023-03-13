@@ -1,24 +1,38 @@
 #include "TestFunctions.hpp"
 
+/*
+Function: testResetBoard()
+Date Created: 03/11/2023
+Date Last Modified: 03/13/2023
+Description: test case for resetBoard public function of GameBoard class
+Test Steps:
+    1. Initialize GameBoard object
+    2. call resetBoard function
+    3. Check if vector holds '1', '2', ..., '9'
+Expected Result: Vector holds '1', '2', ..., '9'
+Actual Result:
+Status: not run
+*/
 void TestFunctions::testResetBoard(void)
 {
     bool success = true;
-    char board[3][3] = { {'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '9'} };
-    char newChar = '1';
-    resetBoard(board);
-    for (int row = 0; row < 3; ++row)
+    GameBoard testBoard;
+    testBoard.resetBoard();
+    char checkChar = '1';
+    for (auto i : testBoard.getBoard())
     {
-        for (int column = 0; column < 3; ++row)
+        if (i != checkChar++)
         {
-            if (board[row][column] != newChar++)
-            {
-                success = false;
-                break;
-            }
-        }
-        if (success == false)
-        {
+            success = false;
             break;
         }
+    }
+    if(success)
+    {
+        std::cout << "resetBoard passed test!" << std::endl;
+    }
+    else
+    {
+        std::cout << "resetBoard failed test!" << std::endl;
     }
 }

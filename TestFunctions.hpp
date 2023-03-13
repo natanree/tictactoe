@@ -1,5 +1,5 @@
 #pragma once
-#include "functions.hpp"
+#include "GameBoard.hpp"
 
 class TestFunctions
 {
