@@ -36,3 +36,18 @@ void GameBoard::resetBoard()
         this->mBoard.emplace_back(i);
     }
 }
+
+/*
+Function: getBoard()
+Date Created: 03/13/2023
+Date Last Modified: 03/13/2023
+Description getter for vector mBoard
+Input: n/a
+Output: reference to character vector
+Precondition: n/a
+Postcondition: n/a
+*/
+std::vector<char>& GameBoard::getBoard(void)
+{
+    return this->mBoard;
+}
