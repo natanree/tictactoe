@@ -51,3 +51,27 @@ std::vector<char>& GameBoard::getBoard(void)
 {
     return this->mBoard;
 }
+
+void GameBoard::playerTurn(char symbol)
+{
+    int boardPos = 0;
+    bool redo;
+    do
+    {
+        redo = false;
+        std::cout << "Please pick a board position: ";
+        std::cin >> boardPos;
+        if (boardPos < 1 || boardPos > 9 || this->mBoard[boardPos-1] < '1' || this->mBoard[boardPos-1] > '9')
+        {
+            redo = true;
+        }
+    } while (redo);
+
+    this->mBoard[boardPos-1] = symbol;
+}
+
+void GameBoard::displayBoard(void)
+{
+    std::cout << "\t|\t|" << std::endl;
+    std::cout << "   " << this->mBoard[0] << "\t|    " << this->mBoard[1] << std::endl;
+}

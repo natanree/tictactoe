@@ -8,6 +8,6 @@ Date Last Modified: 03/13/2023
 int main (void)
 {
     GameBoard tictactoe;
-    
+    tictactoe.displayBoard();
     return 0;
 }
