@@ -70,8 +70,25 @@ void GameBoard::playerTurn(char symbol)
     this->mBoard[boardPos-1] = symbol;
 }
 
+/*
+Function: displayBoard()
+Date Created: 03/13/2023
+Date Last Modified: 03/13/2023
+Description: displays current state of board to terminal
+Input: n/a
+Output: n/a
+Precondition: mBoard has 9 items
+Postcondition: displays a board to terminal
+*/
 void GameBoard::displayBoard(void)
 {
     std::cout << "\t|\t|" << std::endl;
-    std::cout << "   " << this->mBoard[0] << "\t|    " << this->mBoard[1] << std::endl;
+    std::cout << "    " << this->mBoard[0] << "\t|   " << this->mBoard[1] << "\t|   " << this->mBoard[2] << std::endl;
+    std::cout << " _______|_______|_______" << std::endl;
+    std::cout << "\t|\t|" << std::endl;
+    std::cout << "    " << this->mBoard[3] << "\t|   " << this->mBoard[4] << "\t|   " << this->mBoard[5] << std::endl;
+    std::cout << " _______|_______|_______" << std::endl;
+    std::cout << "\t|\t|" << std::endl;
+    std::cout << "    " << this->mBoard[6] << "\t|   " << this->mBoard[7] << "\t|   " << this->mBoard[8] << std::endl;
+    std::cout << "\t|\t|" << std::endl;
 }

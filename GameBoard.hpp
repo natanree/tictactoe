@@ -15,6 +15,8 @@ class GameBoard
 
     void displayBoard(void);
 
+    
+
     private:
     std::vector<char> mBoard;
 };
