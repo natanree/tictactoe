@@ -25,4 +25,6 @@ class GameBoard
     bool horizontalWinHelper(void);
 
     bool diagonalWinHelper(void);
+
+    int boardChoiceHelper(void);
 };

@@ -55,9 +55,19 @@ std::vector<char>& GameBoard::getBoard(void)
 /*
 Function: playerTurn()
 Date Created: 03/13/2023
-Date Last Modified: 03/13/2023
+Date Last Modified: 03/14/2023
 */
 void GameBoard::playerTurn(char symbol)
+{
+    this->mBoard[boardChoiceHelper()-1] = symbol;
+}
+
+/*
+Function: boardChoiceHelper()
+Date Created: 03/14/2023
+Date Last Modified: 03/14/2023
+*/
+int GameBoard::boardChoiceHelper(void)
 {
     int boardPos = 0;
     bool redo;
@@ -71,8 +81,7 @@ void GameBoard::playerTurn(char symbol)
             redo = true;
         }
     } while (redo);
-
-    this->mBoard[boardPos-1] = symbol;
+    return boardPos;
 }
 
 /*
