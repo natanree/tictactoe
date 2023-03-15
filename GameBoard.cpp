@@ -52,6 +52,11 @@ std::vector<char>& GameBoard::getBoard(void)
     return this->mBoard;
 }
 
+/*
+Function: playerTurn()
+Date Created: 03/13/2023
+Date Last Modified: 03/13/2023
+*/
 void GameBoard::playerTurn(char symbol)
 {
     int boardPos = 0;
@@ -68,6 +73,72 @@ void GameBoard::playerTurn(char symbol)
     } while (redo);
 
     this->mBoard[boardPos-1] = symbol;
+}
+
+/*
+Function: checkForWin()
+Date Created: 03/14/2023
+Date Last Modified: 03/14/2023
+*/
+bool GameBoard::checkForWin(void)
+{
+    if (!verticalWinHelper() && !horizontalWinHelper() && !diagonalWinHelper())
+    {
+        return false;
+    }
+    return true;
+}
+
+/*
+Function: verticalWinHelper()
+Date Created: 03/14/2023
+Date Last Modified: 03/14/2023
+*/
+bool GameBoard::verticalWinHelper(void)
+{
+    for (int i = 0; i < 3; i++)
+    {
+        if (this->mBoard[i] == this->mBoard[i+3] == this->mBoard[i+6])
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+/*
+Function: horizontalWinHelper()
+Date Created: 03/14/2023
+Date Last Modified: 03/14/2023
+*/
+bool GameBoard::horizontalWinHelper(void)
+{
+    for (int i = 0; i < 7; i += 3)
+    {
+        if (this->mBoard[i] == this->mBoard[i+1] == this->mBoard[i+2])
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+/*
+Function: diagonalWinHelper()
+Date Created: 03/14/2023
+Date Last Modified: 03/14/2023
+*/
+bool GameBoard::diagonalWinHelper(void)
+{
+    if (this->mBoard[0] == this->mBoard[4] == this->mBoard[8])
+    {
+        return true;
+    }
+    else if (this->mBoard[2] == this->mBoard[4] == this->mBoard[6])
+    {
+        return true;
+    }
+    return false;
 }
 
 /*
