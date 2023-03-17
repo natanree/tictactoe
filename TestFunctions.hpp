@@ -5,4 +5,6 @@ class TestFunctions
 {
     public:
     void testResetBoard(void);
+
+    void testUpdateBoard(void);
 };
