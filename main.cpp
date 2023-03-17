@@ -14,7 +14,7 @@ int main (void)
     testObj.testResetBoard();
     testObj.testUpdateBoard();
     // end of test functions
-    
+    getMenuOption();
     GameBoard tictactoe;
     tictactoe.displayBoard();
     return 0;
