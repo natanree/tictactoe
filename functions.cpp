@@ -34,3 +34,23 @@ int getMenuOption(void)
     } while (redo);
     return choice;
 }
+
+/*
+Function: gameLoop()
+Date Created: 03/17/2023
+Date Last Modified: 03/17/2023
+*/
+void gameLoop(void)
+{
+    int choice;
+    GameBoard theBoard;
+    do
+    {
+        choice = getMenuOption();
+        if (choice == 1)
+        {
+            theBoard.displayBoard();
+        }
+    } while (choice == 1);
+    
+}

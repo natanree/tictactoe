@@ -1,6 +1,8 @@
 #pragma once
-#include <iostream>
+#include "GameBoard.hpp"
 
 void displayMenu(void);
 
 int getMenuOption(void);
+
+void gameLoop(void);
