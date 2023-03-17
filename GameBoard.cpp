@@ -53,19 +53,25 @@ std::vector<char>& GameBoard::getBoard(void)
 }
 
 /*
-Function: playerTurn()
+Function: updateBoard()
 Date Created: 03/13/2023
-Date Last Modified: 03/14/2023
+Date Last Modified: 03/16/2023
+Description: changes item in vector
+Input: character and int
+Output: n/a
+Precondition: boardPos is 1-9
+Postcondition: sets mBoard[boardPos] to symbol and displays new board
 */
-void GameBoard::playerTurn(char symbol)
+void GameBoard::updateBoard(char symbol, int boardPos)
 {
-    this->mBoard[boardChoiceHelper()-1] = symbol;
+    this->mBoard[boardPos-1] = symbol;
+    displayBoard();
 }
 
 /*
 Function: boardChoiceHelper()
 Date Created: 03/14/2023
-Date Last Modified: 03/14/2023
+Date Last Modified: 03/16/2023
 */
 int GameBoard::boardChoiceHelper(void)
 {
@@ -78,6 +84,7 @@ int GameBoard::boardChoiceHelper(void)
         std::cin >> boardPos;
         if (boardPos < 1 || boardPos > 9 || this->mBoard[boardPos-1] < '1' || this->mBoard[boardPos-1] > '9')
         {
+            std::cout << "Invalid input! Please pick again" << std::endl;
             redo = true;
         }
     } while (redo);

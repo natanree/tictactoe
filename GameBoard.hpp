@@ -11,7 +11,7 @@ class GameBoard
 
     std::vector<char>& getBoard(void);
 
-    void playerTurn(char symbol);
+    void updateBoard(char symbol, int boardPos);
 
     void displayBoard(void);
 
