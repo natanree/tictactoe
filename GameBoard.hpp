@@ -20,6 +20,8 @@ class GameBoard
     private:
     std::vector<char> mBoard;
 
+    // ----- private functions -----
+
     bool verticalWinHelper(void);
 
     bool horizontalWinHelper(void);
